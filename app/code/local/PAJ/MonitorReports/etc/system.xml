@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+
+<config>
+    <tabs>
+        <paj_extensions translate="label" module="paj_monitorreports">
+            <label>My Extensions</label>
+            <sort_order>210</sort_order>
+        </paj_extensions>
+    </tabs>
+    
+    <sections>
+        <monitorreports_section1 translate="label" module="paj_monitorreports">
+            <class>separator-top</class>
+            <label>Monitor Reports</label>
+            <tab>paj_extensions</tab>
+            <sort_order>150</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+                   <groups>
+					<general translate="label">
+						<label>Monitor Reports</label>
+						<frontend_type>text</frontend_type>
+						<sort_order>50</sort_order>
+						<show_in_default>1</show_in_default>
+						<show_in_website>1</show_in_website>
+						<show_in_store>1</show_in_store>
+						<fields>
+							<label1 translate="label comment">
+								<label>v0.01</label>
+								<frontend_type>note</frontend_type>
+								<sort_order>1</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>1</show_in_store>
+								<comment>
+								<![CDATA[This extension monitors the /var/reports folder for new report files. New reports will be emailed to the specified address below when detected. Magento scheduled tasks must be enabled and the cron.php script included in your crontab.]]>
+								</comment>
+							</label1>	
+							<monitorreport_email_to translate="label comment">
+								<label>Send Emails To:</label>
+								<frontend_type>text</frontend_type>
+								<sort_order>5</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>1</show_in_store>
+								<comment>Email address to send alerts to.</comment>
+							</monitorreport_email_to>
+							<monitorreport_email_from translate="label comment">
+								<label>From Address:</label>
+								<frontend_type>text</frontend_type>
+								<sort_order>10</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>1</show_in_store>
+								<comment>Email from address.</comment>
+							</monitorreport_email_from>
+							<label2 translate="label comment">
+								<frontend_type>note</frontend_type>
+								<sort_order>100</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>1</show_in_store>
+								<comment>
+								<![CDATA[Magento Monitor Reports v0.01 for support visit <a href="http://blog.gaiterjones.com">blog.gaiterjones.com</a>.]]>
+								</comment>
+							</label2>								
+						</fields>						
+					</general>
+				</groups>
+        </monitorreports_section1>
+    </sections>
+</config>

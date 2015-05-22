@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+
+<config>
+  <modules>
+	  <PAJ_MonitorReports>
+		  <version>0.0.3</version>
+	  </PAJ_MonitorReports>
+  </modules> 
+    <global>
+	   <blocks>
+            <paj_monitorreports>
+            	<class>PAJ_MonitorReports_Block</class>
+           	</paj_monitorreports>
+        </blocks>
+        <helpers>
+            <paj_monitorreports>
+                <class>PAJ_MonitorReports_Helper</class>
+            </paj_monitorreports>
+        </helpers>        
+        <models>
+            <paj_monitorreports>
+                <class>PAJ_MonitorReports_Model</class>
+            </paj_monitorreports>
+		</models>
+	</global>
+  <default>
+    <monitorreports_section1>
+      <general>
+		<monitorreport_email_to>extension@gaiterjones.com</monitorreport_email_to>
+		<monitorreport_email_from>extension@gaiterjones.com</monitorreport_email_from>
+      </general>
+    </monitorreports_section1>
+  </default>	
+    <crontab>
+        <jobs>
+            <paj_monitorreports>
+                <schedule>
+                    <cron_expr>0 * * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>paj_monitorreports/observer::monitorfolder</model>
+                </run>
+            </paj_monitorreports>
+        </jobs>
+    </crontab>	
+	<adminhtml>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<monitorreports_section1 translate="title" module="paj_monitorreports">
+											<title>MonitorReports</title>
+											<sort_order>50</sort_order>
+										</monitorreports_section1>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+	</adminhtml>
+	
+</config>
